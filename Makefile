@@ -32,30 +32,31 @@
 
 # To pass the dkms.conf parameters to the Makefile,
 # add KVER and BASEDIR to the Make command line
-KFLAG := 2$(shell "${KVER}" | sed -ne 's/^2\.[4]\..*/4/p')x
+KFLAG := 2$(shell "$KVER" | sed -ne 's/^2\.[4]\..*/4/p')x
 BSRC ?= /lib/modules/$(shell uname -r)
+KVERSION := $(shell uname -r)
 
 all: clean modules install
 
 modules:
 ifeq ($(KFLAG),24x)
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) -f Makefile_linux24x modules
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) -f Makefile_linux24x modules
 else
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) modules
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) modules
 endif
 
 clean:
 ifeq ($(KFLAG),24x)
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) -f Makefile_linux24x clean
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) -f Makefile_linux24x clean
 else
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) clean
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) clean
 endif
 
 install: modules
 ifeq ($(KFLAG),24x)
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) -f Makefile_linux24x install
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) -f Makefile_linux24x install
 else
-	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) install
+	$(MAKE) -C src/ KVER=$(KVERSION) BASEDIR=$(BSRC) install
 endif
 
 package: modules
