@@ -32,7 +32,7 @@
 
 # To pass the dkms.conf parameters to the Makefile,
 # add KVER and BASEDIR to the Make command line
-KFLAG := 2$(shell "$KVER" | sed -ne 's/^2\.[4]\..*/4/p')x
+KFLAG := 2$(shell "${KVER}" | sed -ne 's/^2\.[4]\..*/4/p')x
 BSRC ?= /lib/modules/$(shell uname -r)
 
 all: clean modules install
@@ -57,3 +57,6 @@ ifeq ($(KFLAG),24x)
 else
 	$(MAKE) -C src/ KVER=$(KVER) BASEDIR=$(BSRC) install
 endif
+
+package: modules
+	dpkg-buildpackage -b -rfakeroot -us -uc
