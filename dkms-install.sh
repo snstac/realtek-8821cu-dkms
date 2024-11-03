@@ -8,8 +8,8 @@ else
 fi
 
 DRV_DIR="$(pwd)"
-DRV_NAME=r8821cu
-DRV_VERSION=10.013.00
+DRV_NAME=8821cu
+DRV_VERSION=5.12.0.4
 
 cp -r ${DRV_DIR} /usr/src/${DRV_NAME}-${DRV_VERSION}
 

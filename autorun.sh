@@ -19,10 +19,10 @@ if [ "$check" != "" ]; then
         /sbin/rmmod r8169
 fi
 
-check=`lsmod | grep r8821cu`
+check=`lsmod | grep 8821cu`
 if [ "$check" != "" ]; then
-        echo "rmmod r8821cu"
-        /sbin/rmmod r8821cu
+        echo "rmmod 8821cu"
+        /sbin/rmmod 8821cu
 fi
 
 echo "Build the module and install"

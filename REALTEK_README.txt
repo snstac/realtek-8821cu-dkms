@@ -10,10 +10,10 @@
 
 <Quick install with proper kernel settings>
 	Unpack the tarball :
-		# tar vjxf r8821cu-9.aaa.bb.tar.bz2
+		# tar vjxf 8821cu-9.aaa.bb.tar.bz2
 
 	Change to the directory:
-		# cd r8821cu-9.aaa.bb
+		# cd 8821cu-9.aaa.bb
 
 	If you are running the target kernel, then you should be able to do :
 
@@ -21,7 +21,7 @@
 
 	You can check whether the driver is loaded by using following commands.
 
-		# lsmod | grep r8821cu
+		# lsmod | grep 8821cu
 		# ifconfig -a
 
 	If there is a device name, ethX, shown on the monitor, the linux
@@ -88,10 +88,10 @@
 
 	1. Force the link status when insert the driver.
 
-	   If the user is in the path ~/r8821cu, the link status can be forced
+	   If the user is in the path ~/8821cu, the link status can be forced
 	   to one of the 5 modes as following command.
 
-		# insmod ./src/r8821cu.ko speed=SPEED_MODE duplex=DUPLEX_MODE autoneg=NWAY_OPTION
+		# insmod ./src/8821cu.ko speed=SPEED_MODE duplex=DUPLEX_MODE autoneg=NWAY_OPTION
 
 		,where
 			SPEED_MODE	= 1000	for 1000Mbps
@@ -103,7 +103,7 @@
 					= 1	for auto-negotiation on (nway force)
 		For example:
 
-			# insmod ./src/r8821cu.ko speed=100 duplex=0 autoneg=1
+			# insmod ./src/8821cu.ko speed=100 duplex=0 autoneg=1
 
 		will force PHY to operate in 100Mpbs Half-duplex(nway force).
 

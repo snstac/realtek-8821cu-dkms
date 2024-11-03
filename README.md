@@ -1,12 +1,12 @@
-# Realtek r8821cu DKMS
+# Realtek 8821cu DKMS
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/awesometic/realtek-r8821cu-dkms?sort=semver&style=for-the-badge)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/awesometic/realtek-8821cu-dkms?sort=semver&style=for-the-badge)
 
-This provides Realtek r8821cu driver in DKMS way so that you can keep the latest driver even after the kernel upgrade.
+This provides Realtek 8821cu driver in DKMS way so that you can keep the latest driver even after the kernel upgrade.
 
 ## Before use
 
-This DKMS package is for Realtek RTL8821cu (r8821cu in module name) Ethernet, which is designed for the PCI interface.
+This DKMS package is for Realtek RTL8821cu (8821cu in module name) Ethernet, which is designed for the PCI interface.
 
 If you are searching for the Realtek 2.5 Gbits **PCI or USB Ethernet**, which may use RTL8125 and RTL8152 respectively, please refer to another DKMS project for that Realtek driver.
 
@@ -30,13 +30,13 @@ Download the latest Debian package from the Release tab on the Github repository
 Then enter the following command.
 
 ```bash
-sudo dpkg -i realtek-r8821cu-dkms*.deb
+sudo dpkg -i realtek-8821cu-dkms*.deb
 ```
 
 > If multiple files selected by the wild card, you should type the specific version of the file.
 >
 > ```bash
-> sudo dpkg -i realtek-r8821cu-dkms_10.013.00-1_amd64.deb
+> sudo dpkg -i realtek-8821cu-dkms_10.013.00-1_amd64.deb
 > ```
 
 If dependency error occurs, try to fix that with `apt` command.
@@ -56,7 +56,7 @@ sudo add-apt-repository ppa:awesometic/ppa
 Then install the package using `apt` tool.
 
 ```bash
-sudo apt install realtek-r8821cu-dkms
+sudo apt install realtek-8821cu-dkms
 ```
 
 ### autorun.sh
@@ -81,7 +81,7 @@ sudo ./dkms-install.sh
 
 ## Verify the module is loaded successfully
 
-After installing the DKMS package, you may not be able to use the new `r8821cu` module on the fly. This because the existing `r8169` module will be loaded priority to `r8821cu` so that it prevents working of the `r8821cu` module.
+After installing the DKMS package, you may not be able to use the new `8821cu` module on the fly. This because the existing `r8169` module will be loaded priority to `8821cu` so that it prevents working of the `8821cu` module.
 
 Check if the `r8169` module loaded currently.
 
@@ -89,15 +89,15 @@ Check if the `r8169` module loaded currently.
 lsmod | grep -i r8169
 ```
 
-If there is a result, maybe the `r8821cu` module wasn't loaded properly. You can check out modules currently in use via `lspci -k` or `dmesg` too.
+If there is a result, maybe the `8821cu` module wasn't loaded properly. You can check out modules currently in use via `lspci -k` or `dmesg` too.
 
-To use the `r8821cu` module explicitly you can add the `r8169` module to not be loaded by adding it to a blacklist file.
+To use the `8821cu` module explicitly you can add the `r8169` module to not be loaded by adding it to a blacklist file.
 
 Enter the following command to configure the blacklist.
 
 ```bash
 sudo tee -a /etc/modprobe.d/blacklist-r8169.conf > /dev/null <<EOT
-# To use r8821cu driver explicitly
+# To use 8821cu driver explicitly
 blacklist r8169
 EOT
 ```
@@ -110,7 +110,7 @@ sudo update-initramfs -u
 
 Finally, reboot to take effect.
 
-> - If you need to load both r8169 and r8821cu, maybe removing r8821cu firmware could make it work. Please enter `sudo rm -f /lib/firmware/rtl_nic/rtl8821cu*` to remove all the r8821cu firmwares on the system. But it is just a workaround, you should have to do this every time installing the new kernel version or new Linux firmware.
+> - If you need to load both r8169 and 8821cu, maybe removing 8821cu firmware could make it work. Please enter `sudo rm -f /lib/firmware/rtl_nic/rtl8821cu*` to remove all the 8821cu firmwares on the system. But it is just a workaround, you should have to do this every time installing the new kernel version or new Linux firmware.
 > - In the case of the Debian package, I will update the scripts to make it do this during the installation.
 
 ## Debian package build
@@ -131,4 +131,4 @@ GPL-2 on Realtek driver and the debian packaing.
 
 ## References
 
-- [Realtek r8821cu driver release page](https://www.realtek.com/Download/List?cate_id=584)
+- [Realtek 8821cu driver release page](https://www.realtek.com/Download/List?cate_id=584)

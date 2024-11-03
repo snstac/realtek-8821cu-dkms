@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0-only
 ################################################################################
 #
-# r8821cu is the Linux device driver released for Realtek 5 Gigabit Ethernet
+# 8821cu is the Linux device driver released for Realtek 5 Gigabit Ethernet
 # controllers with PCI-Express interface.
 #
 # Copyright(c) 2024 Realtek Semiconductor Corp. All rights reserved.

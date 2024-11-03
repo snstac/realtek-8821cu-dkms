@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: realtek-r8821cu-dkms
-Source: https://github.com/awesometic/realtek-r8821cu-dkms
+Upstream-Name: realtek-8821cu-dkms
+Source: https://github.com/awesometic/realtek-8821cu-dkms
 
 Files: *
 Copyright: 2024 Realtek Semiconductor Corp.

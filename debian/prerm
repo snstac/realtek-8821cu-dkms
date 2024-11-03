@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=realtek-r8821cu
+NAME=realtek-8821cu
 VERSION=10.013.00
 
 set -e

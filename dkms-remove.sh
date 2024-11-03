@@ -8,8 +8,8 @@ else
 fi
 
 DRV_DIR="$(pwd)"
-DRV_NAME=r8821cu
-DRV_VERSION=10.013.00
+DRV_NAME=8821cu
+DRV_VERSION=5.12.0.4
 
 dkms remove ${DRV_NAME}/${DRV_VERSION} --all
 rm -rf /usr/src/${DRV_NAME}-${DRV_VERSION}
