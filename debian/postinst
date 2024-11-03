@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 # Copyright (C) 2002-2005 Flavio Stanchina
 # Copyright (C) 2005-2006 Aric Cyr
 # Copyright (C) 2007 Mario Limonciello
@@ -9,8 +9,8 @@ set -e
 NAME=realtek-r8821cu
 PACKAGE_NAME=$NAME-dkms
 DEB_NAME=$(echo $PACKAGE_NAME | sed 's,_,-,')
-CVERSION=`dpkg-query -W -f='${Version}' $DEB_NAME | awk -F "-" '{print $1}' | cut -d\: -f2`
-ARCH=`dpkg --print-architecture`
+CVERSION=$(dpkg-query -W -f='${Version}' $DEB_NAME | awk -F "-" '{print $1}' | cut -d\: -f2)
+ARCH=$(dpkg --print-architecture)
 
 dkms_configure () {
 	for POSTINST in /usr/lib/dkms/common.postinst "/usr/share/$PACKAGE_NAME/postinst"; do
