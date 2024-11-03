@@ -4,7 +4,7 @@
 # Copyright (C) 2007 Mario Limonciello
 # Copyright (C) 2009 Alberto Milone
 
-set -e
+# set -e
 
 NAME=realtek-r8821cu
 PACKAGE_NAME=$NAME-dkms
@@ -15,7 +15,7 @@ ARCH=$(dpkg --print-architecture)
 dkms_configure () {
 	for POSTINST in /usr/lib/dkms/common.postinst "/usr/share/$PACKAGE_NAME/postinst"; do
 		if [ -f "$POSTINST" ]; then
-			nohup "$POSTINST" "$NAME" "$CVERSION" "/usr/share/$PACKAGE_NAME" "$ARCH" "$2"
+			"$POSTINST" "$NAME" "$CVERSION" "/usr/share/$PACKAGE_NAME" "$ARCH" "$2"
 			return $?
 		fi
 		echo "WARNING: $POSTINST does not exist." >&2
