@@ -1,16 +1,15 @@
 Source: realtek-8821cu-dkms
 Section: contrib/kernel
 Priority: optional
-Maintainer: Deokgyu Yang <secugyu@gmail.com>
-Build-Depends: debhelper (>=11~), dkms (<< 3.0.3-3~) | dh-sequence-dkms
+Maintainer: Greg Albrecht <oss@undef.net>
+Build-Depends: debhelper (>=11~), dh-sequence-dkms
 Standards-Version: 4.6.2.1
-Homepage: https://github.com/awesometic/realtek-8821cu-dkms
+Homepage: https://github.com/snstac/realtek-8821cu-dkms
 
 Package: realtek-8821cu-dkms
 Architecture: any
 Multi-Arch: foreign
 Depends: dkms (>= 1.95), ${misc:Depends}
-Description: Realtek RTL8821cu driver in DKMS format
-  This package provides the source code for RTL8821cu Linux driver that may
-  include supporting other Realtek 5 GbE chipsets to be build with dkms.
-  Kernel sources or headers are required to compile this module.
+Description: Realtek RTL8821cu wireless driver 8821cu.ko as a Debian DKMS package.
+  This package includes the source code for the Realtek RTL8821cu Linux module.
+  Debian Linux kernel sources and headers are required to install this module.

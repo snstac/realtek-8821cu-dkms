@@ -2,4 +2,4 @@ realtek-8821cu-dkms for Debian
 
 This installs a DKMS for Realtek 8821cu drivers.
 
- -- Deokgyu Yang <secugyu@gmail.com>  Tue, 06 Oct 2024 11:08:35 +0900
+ -- Greg Albrecht <oss@undef.net>  Sun, 03 Nov 2024 19:04:00 -0800

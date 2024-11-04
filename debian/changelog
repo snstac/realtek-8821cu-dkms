@@ -2,4 +2,4 @@ realtek-8821cu-dkms (5.12.0.4-1) stable; urgency=medium
 
   * Port of https://github.com/morrownr/8821cu-20210916 to a Debian DKMS package based on the work of https://github.com/awesometic/realtek-r8152-dkms, et al. 
 
- -- Greg Albrecht <oss@undef.net>  Sun, 03 Oct 2024 18:35:00 -0800
+ -- Greg Albrecht <oss@undef.net>  Sun, 03 Nov 2024 19:04:00 -0800

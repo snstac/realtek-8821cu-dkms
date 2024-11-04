@@ -1,6 +1,6 @@
 realtek-8821cu-dkms for Debian
 
 The driver source can be found here:
- https://www.realtek.com/Download/List?cate_id=584
+ https://www.realtek.com/Product/Index?id=589
 
- -- Deokgyu Yang <secugyu@gmail.com>  Tue, 06 Oct 2024 11:08:35 +0900
+ -- Greg Albrecht <oss@undef.net>  Sun, 03 Nov 2024 19:04:00 -0800

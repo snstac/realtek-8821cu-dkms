@@ -1,10 +1,15 @@
-#!/bin/sh -x
+#!/bin/sh 
 # Copyright (C) 2002-2005 Flavio Stanchina
 # Copyright (C) 2005-2006 Aric Cyr
 # Copyright (C) 2007 Mario Limonciello
 # Copyright (C) 2009 Alberto Milone
 
-# set -e
+# EXEMPT_POSTINST is used to bypass the 'set -e' command which makes the script exit immediately if a command exits with a non-zero status.
+# This is useful when the script is expected to fail in some cases.
+[ -z "$EXEMPT_POSTINST" ] && set -e
+
+# Enable debugging if DEBUG is defined
+[ -n "$DEBUG" ] && set -x
 
 NAME=realtek-8821cu
 PACKAGE_NAME=$NAME-dkms

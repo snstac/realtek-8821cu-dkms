@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# EXEMPT_POSTINST is used to bypass the 'set -e' command which makes the script exit immediately if a command exits with a non-zero status.
+# This is useful when the script is expected to fail in some cases.
+[ -z "$EXEMPT_POSTINST" ] && set -e
+
+# Enable debugging if DEBUG is defined
+[ -n "$DEBUG" ] && set -x
+
 echo "Installing Debian package build dependencies"
 
 apt-get update -qq
